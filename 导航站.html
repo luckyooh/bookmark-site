@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络资源导航 | 从需求调研到建站资源的一站式导航</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #e74c3c;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            padding: 15px 20px;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-item:hover {
+            color: var(--primary-color);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        section:nth-child(even) .card {
+            background-color: #f8f9fa;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .card-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .card-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .nav-item {
+                padding: 10px 15px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>网络资源导航</h1>
+            <p class="subtitle">从需求调研到建站资源的一站式导航工具集</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <a href="#keyword-research" class="nav-item">需求与关键词</a>
+            <a href="#website-essentials" class="nav-item">建站必备</a>
+            <a href="#competitor-research" class="nav-item">竞品调研</a>
+            <a href="#navigation-sites" class="nav-item">导航参考</a>
+            <a href="#resources" class="nav-item">资讯资源</a>
+        </div>
+    </nav>
+    
+    <main>
+        <!-- 第一部分: 需求收集和关键词调研 -->
+        <section id="keyword-research">
+            <div class="container">
+                <h2>需求收集和关键词调研</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">谷歌下拉词</h3>
+                            <p class="card-desc">搜索关键词获取谷歌搜索建议，了解用户搜索需求和趋势</p>
+                            <a href="https://www.searchsuggest.tips/?keyword=" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Toolify 榜单</h3>
+                            <p class="card-desc">查看按收入排名的最佳AI工具榜单，了解市场趋势</p>
+                            <a href="https://www.toolify.ai/Best-AI-Tools-revenue" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">AI需求列表</h3>
+                            <p class="card-desc">查看用户对AI工具的实际需求列表，发现市场空白</p>
+                            <a href="https://theresanaiforthat.com/requests" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">关键词难度检测</h3>
+                            <p class="card-desc">分析关键词难度和竞争度，优化SEO策略</p>
+                            <a href="https://ahrefs.com/keyword-difficulty" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第二部分: 上站必备 -->
+        <section id="website-essentials">
+            <div class="container">
+                <h2>建站必备工具</h2>
+                <div class="card-container">
+                    <!-- 域名查询 -->
+                    <div class="card">
+                        <div class="card-header">域名查询</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Lean Domain Search</h3>
+                            <p class="card-desc">根据关键词查找可用域名，提供众多创意组合</p>
+                            <a href="https://leandomainsearch.com/" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">域名查询</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Query Domains</h3>
+                            <p class="card-desc">快速查询域名可用性及价格比较</p>
+                            <a href="https://query.domains/" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">域名查询</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Instant Domain Search</h3>
+                            <p class="card-desc">实时检查域名可用性，即时结果显示</p>
+                            <a href="https://instantdomainsearch.com/?q=" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 域名注册 -->
+                    <div class="card">
+                        <div class="card-header">域名注册</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Spaceship</h3>
+                            <p class="card-desc">现代化域名注册服务，界面简洁</p>
+                            <a href="https://spaceship.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">域名注册</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Porkbun</h3>
+                            <p class="card-desc">提供有竞争力价格的域名注册商</p>
+                            <a href="https://porkbun.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">域名注册</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Namecheap</h3>
+                            <p class="card-desc">知名域名注册商，提供优惠价格及附加服务</p>
+                            <a href="https://namecheap.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 代码&网站托管 -->
+                    <div class="card">
+                        <div class="card-header">代码&网站托管</div>
+                        <div class="card-body">
+                            <h3 class="card-title">GitHub</h3>
+                            <p class="card-desc">代码托管平台，支持静态网站部署</p>
+                            <a href="https://github.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">代码&网站托管</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Cloudflare</h3>
+                            <p class="card-desc">CDN、DNS和网站安全服务提供商</p>
+                            <a href="https://cloudflare.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">代码&网站托管</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Vercel</h3>
+                            <p class="card-desc">前端应用托管平台，支持自动部署</p>
+                            <a href="https://vercel.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 数据后台 -->
+                    <div class="card">
+                        <div class="card-header">数据后台</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Google Search Console</h3>
+                            <p class="card-desc">监控网站在Google搜索中的表现</p>
+                            <a href="https://search.google.com/search-console" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">数据后台</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Google Analytics</h3>
+                            <p class="card-desc">全面的网站访问统计与用户行为分析</p>
+                            <a href="https://analytics.google.com/analytics/web/#/" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">数据后台</div>
+                        <div class="card-body">
+                            <h3 class="card-title">Bing Webmaster</h3>
+                            <p class="card-desc">提交网站到Bing搜索引擎并监控表现</p>
+                            <a href="https://www.bing.com/webmasters/submiturl" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第三部分: 竞品调研 -->
+        <section id="competitor-research">
+            <div class="container">
+                <h2>竞品调研工具</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">AITDK</h3>
+                            <p class="card-desc">查看网站流量和关键词排名数据</p>
+                            <a href="https://aitdk.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Ahrefs 免费SEO工具</h3>
+                            <p class="card-desc">分析竞争对手外链情况</p>
+                            <a href="https://ahrefs.com/free-seo-tools" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">SEMrush</h3>
+                            <p class="card-desc">全面分析网站关键词和竞争情况</p>
+                            <a href="https://semrush.com" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第四部分: 导航网站参考 -->
+        <section id="navigation-sites">
+            <div class="container">
+                <h2>导航网站开源参考</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Fre123 导航</h3>
+                            <p class="card-desc">开源的导航网站模板，设计清晰</p>
+                            <a href="https://github.com/fre123-com/fre123-nav/" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">OSS Gallery</h3>
+                            <p class="card-desc">开源软件展示画廊</p>
+                            <a href="https://github.com/dubinc/oss-gallery?ref=ossgallery" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">WebStack 导航</h3>
+                            <p class="card-desc">简洁美观的导航网站模板</p>
+                            <a href="https://github.com/WebStackPage/WebStackPage.github.io" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Tap4 AI WebUI</h3>
+                            <p class="card-desc">AI工具导航站界面</p>
+                            <a href="https://github.com/6677-ai/tap4-ai-webui" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">GPTs Works</h3>
+                            <p class="card-desc">GPTs作品集导航</p>
+                            <a href="https://github.com/all-in-aigc/gpts-works" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">UI Libraries</h3>
+                            <p class="card-desc">UI库集合</p>
+                            <a href="https://github.com/ddahan/ui-libs" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">DokeyAI Data</h3>
+                            <p class="card-desc">AI数据导航资源</p>
+                            <a href="https://github.com/DokeyAI/dokeyai-data" class="card-link" target="_blank">查看源码</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第五部分: 资讯 -->
+        <section id="resources">
+            <div class="container">
+                <h2>资讯与学习资源</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Reddit 子社区汇总</h3>
+                            <p class="card-desc">各类技术和行业相关的Reddit社区收集</p>
+                            <a href="https://liberating-doll-b8a.notion.site/Reddit-1a8e8aed91b18021839ecba8b74e530b" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">谷歌SEO基础知识</h3>
+                            <p class="card-desc">Google官方SEO指南，了解搜索引擎优化基础</p>
+                            <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-cn" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">热门网站趋势</h3>
+                            <p class="card-desc">Ahrefs统计的流量增长最快的网站</p>
+                            <a href="https://ahrefs.com/websites#trending" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">AI视频SaaS工具列表</h3>
+                            <p class="card-desc">AI视频创作相关工具汇总</p>
+                            <a href="https://docs.google.com/spreadsheets/d/1QOdqq9KbjQj1JZO43vc1pir2rnEEsMUXzTDATrOCn2k/edit?gid=0#gid=0" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">个人创业者报告</h3>
+                            <p class="card-desc">Solopreneur创业数据分析报告</p>
+                            <a href="https://docs.google.com/spreadsheets/d/1eUni44pIURML2VWFFXKzNmm-WKuuam9_ynr5Fo_Q74M/edit?gid=83151001#gid=83151001" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">月入500美元的副业</h3>
+                            <p class="card-desc">展示月收入超过500美元的个人项目</p>
+                            <a href="https://www.500mrr.com/" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">HN创业者分享</h3>
+                            <p class="card-desc">2024年HackerNews上的副业项目分享</p>
+                            <a href="https://news.ycombinator.com/item?id=42373343" class="card-link" target="_blank">立即访问</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 网络资源导航 | 收集整理优质网站和工具资源</p>
+        </div>
+    </footer>
+</body>
+</html>
